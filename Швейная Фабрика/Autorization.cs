@@ -14,8 +14,10 @@ namespace Швейная_Фабрика
    
     public partial class FormAutoriz : Form
     {
-        
-        const string con = @"Data Source=ПК-ПК\SQLEXPRESS;Initial Catalog=Fabrika;Integrated Security=True";
+        //Дом
+        //const string con = @"Data Source=ПК-ПК\SQLEXPRESS;Initial Catalog=Fabrika;Integrated Security=True";
+        //Учеба
+        const string con = @"Data Source=rt-1kk-pc3;Initial Catalog=Fabrika;Persist Security Info=True;User ID=sa;Password=11";
         SqlConnection connection = new SqlConnection(con);
         
         public FormAutoriz()
@@ -42,9 +44,50 @@ namespace Швейная_Фабрика
                 if (table.Rows.Count > 0)
                 {
                 label4.Visible = false;
-
-                MessageBox.Show("Da");
+                string role_ = "";
+                string role = $"SELECT Роль FROM Пользователь WHERE Логин = '{LoginTextBox.Text}'";
+                SqlCommand myRole = new SqlCommand(role, connection);
+                SqlDataReader myRole_Read = myRole.ExecuteReader();
+                while (myRole_Read.Read())
+                {
+                    role_ = myRole_Read[0].ToString();
                 }
+                myRole_Read.Close();
+
+                if (role_ == "admin")
+                {
+                    AdminPanel adm = new AdminPanel();
+                    this.Hide();
+                    adm.Show();
+                }
+               /* switch (role_)
+                {
+                    case "admin":
+                        AdminPanel adm = new AdminPanel();
+                        this.Hide();
+                        adm.Show();
+                        MessageBox.Show("adm");
+                        break;
+
+                    case "provider":
+
+                        break;
+
+                    case "manager":
+
+                        break;
+
+                    case "client":
+
+                        break;
+                }
+                */
+
+                
+
+
+                }
+
                 else
                 {
                 label4.Visible = true;

@@ -52,17 +52,15 @@
             // LoginTextBox
             // 
             this.LoginTextBox.Location = new System.Drawing.Point(56, 154);
-            this.LoginTextBox.Multiline = true;
             this.LoginTextBox.Name = "LoginTextBox";
-            this.LoginTextBox.Size = new System.Drawing.Size(197, 22);
+            this.LoginTextBox.Size = new System.Drawing.Size(197, 20);
             this.LoginTextBox.TabIndex = 1;
             // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.Location = new System.Drawing.Point(56, 219);
-            this.PasswordTextBox.Multiline = true;
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(197, 22);
+            this.PasswordTextBox.Size = new System.Drawing.Size(197, 20);
             this.PasswordTextBox.TabIndex = 2;
             // 
             // label2
@@ -118,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Green;
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(311, 363);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.LogButton);
